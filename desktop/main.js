@@ -10,7 +10,7 @@ const createWindow = () => {
   });
   try {
     const developmentURL = "http://localhost:3000";
-    const productionURL = "https://deanin-turbochat.herokuapp.com/";
+    const productionURL = "https://ceercles-chat.herokuapp.com/";
     win.loadURL(productionURL);
   } catch (error) {
     console.error(error);
