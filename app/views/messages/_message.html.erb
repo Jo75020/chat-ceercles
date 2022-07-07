@@ -1,7 +1,7 @@
 <div class="cont-<%=message.user.id%>">
   <div class="message-box msg-<%= message.user.id %>">
     <div class="d-flex align-items-center">
-      <%= image_tag(asset_path(message.user.chat_avatar), class:'chat_pfp') %>
+      <%= image_tag(message.user.chat_avatar, class:'chat_pfp') %>
       <div>
         <h6 class="name msg-role-<%= message.user.role %>">
           <%= render "messages/user_dropdown", user: message.user %>
