@@ -11,7 +11,7 @@ digitalocean:
   endpoint: https://nyc3.digitaloceanspaces.com
   access_key_id: ZIYHXVGRDJLI2D2GQDRH
   secret_access_key: QcuWjPE/2s7cb2nvmsAdEbtOhZPaPZa/fUHWKf6DOdU
-  bucket: ceercleschat
+  bucket: ceercles
   region: nyc3
 
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
