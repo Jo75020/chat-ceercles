@@ -18,6 +18,7 @@ class Message < ApplicationRecord
     return unless attachments.attached?
 
     if target.image?
+      p target
       target.variant(resize_to_limit: [150, 150]).processed
     elsif target.video?
       target.variant(resize_to_limit: [150, 150]).processed

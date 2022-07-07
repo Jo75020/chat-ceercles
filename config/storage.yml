@@ -9,10 +9,10 @@ local:
 digitalocean:
   service: S3
   endpoint: https://fra1.digitaloceanspaces.com
-  access_key_id: ZIYHXVGRDJLI2D2GQDRH
-  secret_access_key: QcuWjPE/2s7cb2nvmsAdEbtOhZPaPZa/fUHWKf6DOdU
+  access_key_id: <%= ENV['ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['SECRET8ACCESS_KEY'] %>
   bucket: ceercles
-  region: nyc3
+  region: fra1
 
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
