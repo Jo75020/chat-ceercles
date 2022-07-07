@@ -15,7 +15,7 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgresql
+  adapter: <%= ENV['DB_ADAPTER'] ||= 'postgresql' %>
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -28,8 +28,8 @@ development:
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
-  # the same name as the operating system user running Rails.
-  #username: ceercles
+  # the same name as the operating system user that initialized the database.
+  #username: go_movido
 
   # The password associated with the postgres role (username).
   #password:
@@ -63,30 +63,29 @@ test:
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
 #
-# Instead, provide the password or a full connection URL as an environment
-# variable when you boot the app. For example:
+# Instead, provide the password as a unix environment variable when you boot
+# the app. Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
+# for a full rundown on how to provide these environment variables in a
+# production deployment.
+#
+# On Heroku and other platform providers, you may have a full connection URL
+# available as an environment variable. For example:
 #
 #   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
 #
-# If the connection URL is provided in the special DATABASE_URL environment
-# variable, Rails will automatically merge its configuration values on top of
-# the values provided in this file. Alternatively, you can specify a connection
-# URL environment variable explicitly:
+# You can use this database configuration with:
 #
 #   production:
-#     url: <%= ENV['MY_APP_DATABASE_URL'] %>
-#
-# Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
-# for a full overview on how database connection configuration can be specified.
+#     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
   <<: *default
-  database: ceercles_production
-  username: ceercles
+  database: ceercles_chat_production
+  username: ceercles_chat
   password: <%= ENV['CEERCLES_CHAT_DATABASE_PASSWORD'] %>
 
 staging:
   <<: *default
-  database: ceercles_staging
-  username: ceercles
+  database: ceercles_chat_staging
+  username: ceercles_chat
   password: <%= ENV['CEERCLES_CHAT_DATABASE_PASSWORD'] %>
